@@ -142,13 +142,60 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-08-01T16:00:00.000Z">2019-08-02</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/分类1/">分类1</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/分类1/分类2/">分类2</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    a minute read (About 164 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/08/02/测试文章/">测试文章</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="测试代码高亮："><a href="#测试代码高亮：" class="headerlink" title="测试代码高亮："></a>测试代码高亮：</h2><h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">  application:</span><br><span class="line">    name: consul-comsumer</span><br><span class="line">  cloud:</span><br><span class="line">    consul:</span><br><span class="line">      host: 127.0.0.1</span><br><span class="line">      port: 8500</span><br><span class="line">      discovery:</span><br><span class="line">        register: true # 默认就是true, consumer可以不注册的也可设为false</span><br></pre></td></tr></table></figure>
+
+<p>2</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">package listener;</span><br><span class="line"></span><br><span class="line">import java.util.HashMap;</span><br><span class="line"></span><br><span class="line">import javax.servlet.ServletContext;</span><br><span class="line">import javax.servlet.annotation.WebListener;</span><br><span class="line">import javax.servlet.http.HttpSession;</span><br><span class="line">import javax.servlet.http.HttpSessionEvent;</span><br><span class="line">import javax.servlet.http.HttpSessionListener;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * Application Lifecycle Listener implementation class UserListener</span><br><span class="line"> *</span><br><span class="line"> */</span><br><span class="line">@WebListener</span><br><span class="line">public class UserListener implements HttpSessionListener &#123;</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line">    public void sessionCreated(HttpSessionEvent arg0)  &#123; </span><br><span class="line">    	HttpSession session = arg0.getSession();</span><br><span class="line">    	session.setMaxInactiveInterval(10);</span><br><span class="line">    	String id = session.getId();</span><br><span class="line">    	System.out.println(&quot;你的好友&quot;+id+&quot;上线了&quot;);</span><br><span class="line">    	ServletContext application = session.getServletContext();</span><br><span class="line">    	HashMap&lt;String, Boolean&gt; userMap = </span><br><span class="line">    			(HashMap&lt;String, Boolean&gt;) application.getAttribute(&quot;userMap&quot;);</span><br><span class="line">    	userMap.put(id, true);</span><br><span class="line">    	application.setAttribute(&quot;userMap&quot;, userMap);</span><br><span class="line">    	</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    public void sessionDestroyed(HttpSessionEvent arg0)  &#123; </span><br><span class="line">    	HttpSession session = arg0.getSession();</span><br><span class="line">	String id = session.getId();</span><br><span class="line">	System.out.println(&quot;你的好友&quot;+id+&quot;退出了&quot;);</span><br><span class="line">	</span><br><span class="line">	ServletContext application = session.getServletContext();</span><br><span class="line">	</span><br><span class="line">	HashMap&lt;String,Boolean&gt; userMap = </span><br><span class="line">			(HashMap&lt;String, Boolean&gt;) application.getAttribute(&quot;userMap&quot;);</span><br><span class="line">	</span><br><span class="line">	userMap.put(id, false);</span><br><span class="line">	</span><br><span class="line">	application.setAttribute(</span><br><span class="line">			&quot;userMap&quot;, </span><br><span class="line">			userMap);</span><br><span class="line">    &#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2019-07-29T07:14:10.000Z">2019-07-29</time>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    a few seconds read (About 69 words)
+                    a few seconds read (About 99 words)
                 </span>
                 
                 
@@ -161,9 +208,12 @@
             
         </h1>
         <div class="content">
-            <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="沐汐的博客"><a href="#沐汐的博客" class="headerlink" title="沐汐的博客"></a>沐汐的博客</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hello 抹茶</span><br></pre></td></tr></table></figure>
+            <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="沐汐的博客"><a href="#沐汐的博客" class="headerlink" title="沐汐的博客"></a>沐汐的博客</h3><p>1234</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">  application:</span><br><span class="line">    name: consul-comsumer</span><br><span class="line">  cloud:</span><br><span class="line">    consul:</span><br><span class="line">      host: 127.0.0.1</span><br><span class="line">      port: 8500</span><br><span class="line">      discovery:</span><br><span class="line">        register: true # 默认就是true, consumer可以不注册的也可设为false</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="hljs-string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hello 抹茶</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new &quot;My New Post&quot;</span><br></pre></td></tr></table></figure>
 
 <p>好像是一个群: <a href="https://jq.qq.com/?_wv=1027&k=5rUVGjr" target="_blank" rel="noopener">ACG樱桃iApp</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
@@ -282,7 +332,17 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Entradas
+                        Posts
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        3
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Categories
                     </p>
                     <p class="title has-text-weight-normal">
                         2
@@ -292,27 +352,17 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Categorias
+                        Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        0
-                    </p>
-                </div>
-            </div>
-            <div class="level-item has-text-centered is-marginless">
-                <div>
-                    <p class="heading">
-                        Etiquetas
-                    </p>
-                    <p class="title has-text-weight-normal">
-                        0
+                        2
                     </p>
                 </div>
             </div>
         </nav>
         <div class="level">
             <a class="level-item button is-link is-rounded" href="https://Muxiz.github.io/" target="_blank">
-                SEGUIR</a>
+                Follow</a>
         </div>
         
         
@@ -399,16 +449,41 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Categorias
+                Categories
             </h3>
             <ul class="menu-list">
-            
+            <li>
+        <a class="level is-marginless" href="/categories/分类1/">
+            <span class="level-start">
+                <span class="level-item">分类1</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/分类1/分类2/">
+            <span class="level-start">
+                <span class="level-item">分类2</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li>
             </ul>
         </div>
     </div>
 </div>
     
         
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Tag Cloud
+        </h3>
+        <a href="/tags/标签1/" style="font-size: 10px;">标签1</a> <a href="/tags/标签2/" style="font-size: 10px;">标签2</a>
+    </div>
+</div>
+
     
     
         <div class="column-right-shadow is-hidden-widescreen ">
@@ -417,8 +492,27 @@
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recientes
+            Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/08/02/测试文章/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="测试文章">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-01T16:00:00.000Z">2019-08-02</time></div>
+                    <a href="/2019/08/02/测试文章/" class="has-link-black-ter is-size-6">测试文章</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/分类1/">分类1</a> / <a class="has-link-grey -link" href="/categories/分类1/分类2/">分类2</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -466,9 +560,20 @@
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archivos
+            Archives
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2019/07/">
@@ -490,9 +595,23 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Etiquetas
+                Tags
             </h3>
             <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/标签1/">
+                        <span class="tag">标签1</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/标签2/">
+                        <span class="tag">标签2</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
                 
             </div>
         </div>
@@ -514,8 +633,27 @@
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recientes
+            Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/08/02/测试文章/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="测试文章">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-01T16:00:00.000Z">2019-08-02</time></div>
+                    <a href="/2019/08/02/测试文章/" class="has-link-black-ter is-size-6">测试文章</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/分类1/">分类1</a> / <a class="has-link-grey -link" href="/categories/分类1/分类2/">分类2</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -563,9 +701,20 @@
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archivos
+            Archives
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2019/07/">
@@ -587,9 +736,23 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Etiquetas
+                Tags
             </h3>
             <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/标签1/">
+                        <span class="tag">标签1</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/标签2/">
+                        <span class="tag">标签2</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
                 
             </div>
         </div>
@@ -766,10 +929,10 @@ document.addEventListener('DOMContentLoaded', function () {
     (function (window) {
         var INSIGHT_CONFIG = {
             TRANSLATION: {
-                POSTS: 'Entradas',
+                POSTS: 'Posts',
                 PAGES: 'Pages',
-                CATEGORIES: 'Categorias',
-                TAGS: 'Etiquetas',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
                 UNTITLED: '(Untitled)',
             },
             CONTENT_URL: '/content.json',
