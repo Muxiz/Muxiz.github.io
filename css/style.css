@@ -396,8 +396,8 @@ img.thumbnail {
 }
 .content code,
 .content pre {
-  font-size: 0.85em;
-  font-family: "Source Code Pro", monospace, "Microsoft YaHei";
+  font-size: 0.95em;
+  font-family: consolas, Menlo, "PingFang SC", "Microsoft YaHei", monospace;
 }
 .content code {
   color: #ff3860;
