@@ -329,6 +329,7 @@ img.thumbnail {
 }
 .has-mb-6 {
   margin-bottom: 0.5em !important;
+  border-radius: 50%;
 }
 .has-mr-7 {
   margin-right: 0.25em !important;
@@ -396,7 +397,7 @@ img.thumbnail {
 }
 .content code,
 .content pre {
-  font-size: 0.93em;
+  font-size: 0.937em;
   font-family: consolas, Menlo, "PingFang SC", "Microsoft YaHei", monospace;
 }
 .content code {
