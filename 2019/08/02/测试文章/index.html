@@ -16,7 +16,7 @@
 <meta property="og:description" content="测试代码高亮：1">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://muxiz.github.io/images/og_image.png">
-<meta property="og:updated_time" content="2019-08-10T18:09:54.362Z">
+<meta property="og:updated_time" content="2019-08-13T15:02:16.561Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="测试文章">
 <meta name="twitter:description" content="测试代码高亮：1">
@@ -145,24 +145,32 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-9-widescreen has-order-2 column-main"><div class="card">
+    <!--update by thank: 文章详情页面不显示文章图片thumbnail-->
     
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-08-01T16:00:00.000Z">2019-08-02</time>
+                <!--updated by thank: 列表页显示几年前, 文章页显示具体日期-->
                 
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/分类1/">分类1</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/分类1/分类2/">分类2</a>
+                <span style="color: #7a7a7a !important;"><i class="far fa-calendar-alt">&nbsp;</i>2019-08-02 16:31:23&nbsp;&nbsp;&nbsp;</span>
+                
+
+                
+                <i class="far fa-folder-open has-text-grey"></i>
+                &nbsp;<div class="level-item">
+                    <a class="has-link-grey -link" href="/categories/分类1/">分类1</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/分类1/分类2/">分类2</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
+                <i class="far fa-clock">&nbsp;</i>
                     
                     
-                    3 分钟 读完 (大约 378 个字)
+                    3 分钟 读完 (大约 386 个字)
                 </span>
                 
+
                 
             </div>
         </div>
@@ -172,10 +180,11 @@
                 测试文章
             
         </h1>
+
         <div class="content">
             <h2 id="测试代码高亮："><a href="#测试代码高亮：" class="headerlink" title="测试代码高亮："></a>测试代码高亮：</h2><h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><a id="more"></a>
 
-<figure class="highlight yaml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-attr">spring:</span></span><br><span class="line"><span class="hljs-attr">  application:</span></span><br><span class="line"><span class="hljs-attr">    name:</span> <span class="hljs-string">consul-comsumer</span></span><br><span class="line"><span class="hljs-attr">  cloud:</span></span><br><span class="line"><span class="hljs-attr">    consul:</span></span><br><span class="line"><span class="hljs-attr">      host:</span> <span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span></span><br><span class="line"><span class="hljs-attr">      port:</span> <span class="hljs-number">8500</span></span><br><span class="line"><span class="hljs-string">+</span>      <span class="hljs-attr">discovery:</span></span><br><span class="line"><span class="hljs-attr">-        register:</span> <span class="hljs-literal">true</span> <span class="hljs-comment"># 默认就是true, consumer可以不注册的也可设为false</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-attr">spring:</span></span><br><span class="line"><span class="hljs-attr">  application:</span></span><br><span class="line"><span class="hljs-attr">    name:</span> <span class="hljs-string">consul-comsumer</span></span><br><span class="line"><span class="hljs-attr">  cloud:</span></span><br><span class="line"><span class="hljs-attr">    consul:</span></span><br><span class="line"><span class="hljs-attr">      host:</span> <span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span></span><br><span class="line"><span class="hljs-attr">      port:</span> <span class="hljs-number">8500</span></span><br><span class="line"><span class="hljs-string">+</span>      <span class="hljs-attr">discovery:</span></span><br><span class="line"><span class="hljs-attr">-       register:</span> <span class="hljs-literal">true</span> <span class="hljs-comment"># 默认就是true, consumer可以不注册的也可设为false</span></span><br></pre></td></tr></table></figure>
 
 <p>2</p>
 <figure class="highlight cs hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">swap</span>(<span class="hljs-params"><span class="hljs-keyword">int</span>[] a, <span class="hljs-keyword">int</span> indexI, <span class="hljs-keyword">int</span> indexJ</span>)</span> &#123;</span><br><span class="line">    <span class="hljs-keyword">if</span> (a == <span class="hljs-literal">null</span> || indexI &gt;= a.length || indexJ &gt;= a.length) &#123;</span><br><span class="line">        System.<span class="hljs-keyword">out</span>.println(<span class="hljs-string">"a is null ,index out of bound"</span>);</span><br><span class="line">        <span class="hljs-keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">int</span> tmp = a[indexI];</span><br><span class="line">    a[indexI] = a[indexJ];</span><br><span class="line">    a[indexJ] = tmp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -243,7 +252,13 @@
 <p>视频</p>
 <iframe src="//player.bilibili.com/player.html?aid=58798624&cid=102513401&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
-<p>图片<br><img src="https://i.loli.net/2019/08/09/9rS6glUMwPxKEBz.png" alt="QQ群"><br>微信排版编辑器：</p>
+<iframe src="//player.bilibili.com/player.html?aid=50675645&cid=88717862&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+图片
+
+<p><img src="https://i.loli.net/2019/08/09/9rS6glUMwPxKEBz.png" alt="QQ群"></p>
+<p><a href="https://sm.ms/image/ca1UVsM5fulnYhO" target="_blank"><img src="https://i.loli.net/2019/08/13/ca1UVsM5fulnYhO.jpg" alt="20171216103816_M3ERn.png"></a></p>
+<p><img src="https://i.loli.net/2019/08/13/ca1UVsM5fulnYhO.jpg" alt></p>
+<p>微信排版编辑器：</p>
 <section class="_135editor" data-tools="135编辑器" data-id="95587"><section style="padding:1em 0px;"><section style="text-align:right;margin-bottom:-50px;margin-right:5px;"><section style="display:inline-block;width:40px;background:rgb(254,254,254);"><img class="assistant" style="width:100%;display:block;" src="http://image2.135editor.com/cache/remote/aHR0cHM6Ly9tbWJpei5xbG9nby5jbi9tbWJpel9wbmcvN1FSVHZrSzJxQzd1OVlHajFYSlY4elJmcWliMFpzYkRwcmZMbWVNNk9HTWZqNWcyUVFac3B3T3ZvdXhtZVZVMnpWYnNXV0pOVVlMdDVUZ1g5QnRidGV3LzA/d3hfZm10PXBuZw==" data-ratio="1.0166666666666666"></section></section><section style="border:1px solid #e8cdb1;padding:6px;background:rgb(254,254,254);"><section style="border:1px dashed #e8cdb1;padding: 1em 3em 2em 1em;"><section data-autoskip="1" class="135brush" style="background:url(http://image2.135editor.com/cache/remote/aHR0cHM6Ly9tbWJpei5xbG9nby5jbi9tbWJpel9wbmcvN1FSVHZrSzJxQzZVSUczWlhNcGV5ODlEeG1pYVlUc0JpYTJlUldtU3hJUGljMmhPeXhUNVZ3Y3RpYmhBaWFSdHhMTkFOcmp3bVEwUW5yYjNzek1pYjNNaWEyS2JnLzA/d3hfZm10PXBuZw==)no-repeat;background-size:100px;background-position:bottom right; font-size: 14px;text-align: justify;letter-spacing: 1.5px;line-height: 1.75em;color: rgb(63,62,63);padding-bottom:2em;"><p>立秋，是二十四节气中的第13个节气，更是秋天的第一个节气，标志着孟秋时节的正式开始：“秋”就是指暑去凉来。立秋时，北斗指向西南。从这一天起秋天开始，秋高气爽，月明风清。此后，气温由最热逐渐下降。</p></section></section></section><section style="text-align:left;margin-top:-65px;margin-left:5px;"><section style="display:inline-block;width:60px;background:rgb(254,254,254);padding:10px;"><img class="assistant" style="width:100%;display:block;" src="http://image2.135editor.com/cache/remote/aHR0cHM6Ly9tbWJpei5xbG9nby5jbi9tbWJpel9wbmcvN1FSVHZrSzJxQzd1OVlHajFYSlY4elJmcWliMFpzYkRwNmlhZ1BhaWJZZnd5QWlhalNiRGVTMzNkRFd4MldzVDFmUXljQkNlSWE4Z2JLRDE1a2tMSGJnN1FBLzA/d3hfZm10PXBuZw==" data-ratio="1.025"></section></section></section></section>
 
 <section class="_135editor" data-tools="135编辑器" data-id="95507"><section style="padding-bottom:10px;"><section style="width:60px;"><img class="assistant" style="width: 100%;display:block;" src="https://image2.135editor.com/cache/remote/aHR0cHM6Ly9tbWJpei5xbG9nby5jbi9tbWJpel9naWYvN1FSVHZrSzJxQzdaaWJ0cm5wa3VSekRvaWNFSTl2Wk1relRTSGNiODNzd3pEQjRLcGtVTVVhWGFNOFBOSktvZlkzd3k5dm1QYk9yNzUydW5ubkpLaGQ3US8wP3d4X2ZtdD1naWY=" data-ratio="1"></section><section style="width:95%;transform:rotate(0deg);margin:0px auto;background:url(https://image2.135editor.com/cache/remote/aHR0cHM6Ly9tbWJpei5xbG9nby5jbi9tbWJpel9wbmcvN1FSVHZrSzJxQzVzdllpYk91aERjakc2bmxFUGtwOGlhQ3FucUhyYjRlbnBveklJWXBsRXlGMEhEWk9mMjVFem1ob0NIWk04bFBwUVZibmlhNWM4dktpYWR3LzA/d3hfZm10PXBuZw==)no-repeat;background-position:top;background-size:100%;"><img class="assistant" style="width:100%;display:block;opacity:0;" src="https://image2.135editor.com/cache/remote/aHR0cHM6Ly9tbWJpei5xbG9nby5jbi9tbWJpel9wbmcvN1FSVHZrSzJxQzdjaWNKZWZBV1dDWlVTcnptaFZuMEdyelphM2JJNmpOY1lRODBDSUNRMldtblpwTDFjTktMUGhBUjhGeXpXV0wya1lpY2ZxZGtmazUzUS8wP3d4X2ZtdD1wbmc=" data-ratio="0.10893854748603352" data-op="change"></section><section style="width:95%;margin:-2px auto 0px;box-shadow: 3px 3px 6px #d8eeff;background:#f8feff;"><section data-autoskip="1" class="135brush" style=" font-size: 14px;text-align: justify;letter-spacing: 1.5px;line-height: 1.75em;color:#3e85c8;padding:0px 1em 1em 1em;"><p>空腹游泳,由于身体血糖低,特别容易在水中出现肌肉颤抖、头晕眼花、虚脱、昏迷。甚至发生虚脱。而导致溺水等意外险情。空腹不游泳，游泳者在游泳之前应适量补充一些水果、牛奶、糖果之类的食物再下水游泳。</p></section></section></section></section>
