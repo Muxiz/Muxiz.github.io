@@ -20,16 +20,8 @@ textarea {
     max-width: 960px;
     width: 960px;
   }
-  .is-3-column .container {
-    max-width: 1216px;
-    width: 1216px;
-  }
 }
 @media screen and (min-width: 1472px) {
-  .is-3-column .container {
-    max-width: 1344px;
-    width: 1344px;
-  }
   .is-2-column .container {
     max-width: 1152px;
     width: 1152px;
@@ -150,6 +142,9 @@ img.thumbnail {
 .widget .menu-list li ul {
   margin-right: 0;
 }
+.widget .menu-list a {
+  transition: background-color 0.3s ease-in-out;
+}
 .widget .menu-list a.level {
   display: flex;
 }
@@ -216,6 +211,9 @@ img.thumbnail {
   max-width: 50%;
   font-size: 1.15rem;
   position: relative;
+}
+.article .content a {
+  word-wrap: break-word;
 }
 .rtl {
   direction: rtl;
@@ -417,6 +415,9 @@ figure.highlight {
   position: relative;
   margin: 1em 0 1em !important;
 }
+figure.highlight.folded .highlight-body {
+  height: 0;
+}
 figure.highlight pre,
 figure.highlight table tr:hover {
   color: inherit;
@@ -442,13 +443,29 @@ figure.highlight figcaption {
   font-style: normal;
   font-size: 0.8em;
 }
+figure.highlight figcaption:after {
+  clear: both;
+  content: " ";
+  display: table;
+}
 figure.highlight figcaption span {
   font-weight: 500;
   font-family: "Source Code Pro", monospace, "Microsoft YaHei";
 }
+figure.highlight figcaption .fold,
+figure.highlight figcaption a {
+  color: #9a9a9a;
+}
 figure.highlight figcaption a {
   float: right;
-  color: #9a9a9a;
+  margin-left: 0.5em;
+}
+figure.highlight figcaption .fold {
+  margin-right: 0.5em;
+  cursor: pointer;
+}
+figure.highlight .highlight-body {
+  overflow: auto;
 }
 figure.highlight .gutter {
   text-align: right;
@@ -468,19 +485,20 @@ figure.highlight .section {
   min-width: inherit;
   border-radius: inherit;
 }
-figure.highlight .copy {
-  display: none;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  color: #fff;
-  background: rgba(0,0,0,0.5);
+/* ---------------------------------
+ *          Overflow Table
+ * --------------------------------- */
+.table-overflow {
+  overflow-x: auto;
 }
-figure.highlight:hover .copy {
-  display: block;
+.table-overflow table {
+  width: auto !important;
+}
+.table-overflow table th {
+  word-break: keep-all;
 }
 /* ---------------------------------
- *        Fix Video
+ *            Fix Video
  * --------------------------------- */
 .video-container {
   position: relative;
@@ -506,15 +524,6 @@ figure.highlight:hover .copy {
 }
 .gist .file {
   all: initial;
-}
-.highlight figcaption {
-  margin: 0em;
-  padding: 0.5em;
-  background: #eee;
-  border-bottom: 1px solid #e9e9e9;
-}
-.highlight figcaption a {
-  color: #5073b8;
 }
 .post-copyright {
   font-size: 1rem;
